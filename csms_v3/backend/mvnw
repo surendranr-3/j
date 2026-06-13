@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+DIR="$(cd "$(dirname "$0")" && pwd)"
+MAVEN_VERSION=3.8.6
+MAVEN_DIR="$DIR/.mvn/apache-maven-$MAVEN_VERSION"
+if [ ! -x "$MAVEN_DIR/bin/mvn" ]; then
+  echo "Maven not found locally. Downloading Apache Maven $MAVEN_VERSION..."
+  TMP="/tmp/maven-$MAVEN_VERSION.tar.gz"
+  curl -fsSL -o "$TMP" "https://downloads.apache.org/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz"
+  mkdir -p "$DIR/.mvn"
+  tar -xzf "$TMP" -C "$DIR/.mvn"
+  rm -f "$TMP"
+fi
+exec "$MAVEN_DIR/bin/mvn" "$@"

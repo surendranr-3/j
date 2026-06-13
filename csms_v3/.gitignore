@@ -1,0 +1,68 @@
+
+# =========================
+# Java / Spring Boot
+# =========================
+backend/target/
+backend/*.log
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# H2 Database
+backend/data/
+*.mv.db
+*.trace.db
+
+# Maven
+backend/.mvn/apache-maven-*/
+.mvn/apache-maven-*/
+.m2/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse / STS
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# =========================
+# React
+# =========================
+frontend/node_modules/
+frontend/build/
+
+# NPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.local
+.env.production
+.env.development
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
