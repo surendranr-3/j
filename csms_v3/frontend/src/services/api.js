@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:8080/api' });
+// const API = axios.create({ baseURL: 'http://localhost:8080/api' });
+
+const API = axios.create({ baseURL: "https://csms-backend-p68z.onrender.com/api" });
 
 export const registerUser = (data) => API.post('/users/register', data);
 export const loginUser = (data) => API.post('/users/login', data);
